@@ -1,0 +1,42 @@
+{
+    "name": "doc-to-sins2",
+    "version": "0.0.1",
+    "description": "Generates Sins 2 unit entities from Google Sheet data",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron index.js",
+        "build": "electron-builder"
+    },
+    "author": "Tyloth",
+    "license": "MIT",
+    "build": {
+        "productName": "doc-to-sins2",
+        "appId": "com.largebigsnooze.doc-to-sins2",
+        "icon": "./favicon.ico",
+        "directories": {
+            "output": "dist"
+        },
+        "win": {
+            "target": "nsis"
+        },
+        "nsis": {
+            "deleteAppDataOnUninstall": true
+        },
+        "asar": false,
+        "files": [
+            "!node_modules/electron-*",
+            "!node_modules/electron-packager/",
+            "!package-lock.json",
+            "!config.json",
+            "!entities*"
+        ]
+    },
+    "dependencies": {
+        "googleapis": "^105.0.0",
+        "node-modules": "^0.0.1"
+    },
+    "devDependencies": {
+        "electron": "^31.3.1",
+        "electron-builder": "^24.13.3"
+    }
+}
