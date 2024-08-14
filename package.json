@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "electron index.js",
-        "build": "electron-builder"
+        "build": "electron-builder",
+        "prettier": "npx prettier . --write"
     },
     "author": "Tyloth",
     "license": "MIT",

@@ -49,10 +49,10 @@ function trayApp() {
     const poll = async (ms, sheetId, modDirectory, apiKey) => {
         while (isRunning) {
             try {
-                await require('./lib/services/gsheet-to-sins2')(sheetId, modDirectory, apiKey)
+                await require('./lib/services/spreadsheet')(sheetId, modDirectory, apiKey)
             } catch (e) {
                 console.error(e)
-                const message = e.errors[0].message || e.message
+                const message = (e.errors && e.errors[0] && e.errors[0].message) || e.message
                 switch (e.code) {
                     case 429:
                         break // Quota exceeded
@@ -71,6 +71,7 @@ function trayApp() {
                     default: {
                         stopExecution()
                         dialog.showErrorBox('Error', message)
+                        break
                     }
                 }
             }
