@@ -1,6 +1,6 @@
 {
     "name": "doc-to-sins2",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Generates Sins 2 unit entities from Google Sheet data",
     "main": "index.js",
     "scripts": {
